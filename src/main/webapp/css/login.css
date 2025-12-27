@@ -1,0 +1,189 @@
+@charset "ISO-8859-1";
+
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #4f46e5;
+            --success-color: #10b981;
+            --bg-start-color: #f8f9fa;
+            --bg-end-color: #e9f2ff;
+            --card-bg-color: #ffffff;
+            --text-color: #1f2937;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg-start-color), var(--bg-end-color));
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            --bg-start-color: #1a202c;
+            --bg-end-color: #2d3748;
+            --card-bg-color: #2d3748;
+            --text-color: #e2e8f0;
+            --primary-color: #63b3ed;
+            --secondary-color: #9f7aea;
+            --success-color: #10b981;
+        }
+        
+        body.dark-mode .login-card {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        body.dark-mode .login-card::before {
+            background: rgba(99, 179, 237, 0.1);
+        }
+
+        body.dark-mode h3.fw-bold {
+            color: var(--primary-color);
+        }
+
+        body.dark-mode .form-control {
+            background-color: #3f4756;
+            border-color: #5a6473;
+            color: var(--text-color);
+        }
+        
+        /* NEW: Make form labels visible in dark mode */
+        body.dark-mode .form-label {
+            color: var(--text-color); 
+        }
+        
+
+        body.dark-mode .form-control:focus {
+            background-color: #3f4756;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(99, 179, 237, 0.25);
+        }
+        
+        body.dark-mode .btn-primary {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        body.dark-mode .btn-outline-success {
+            color: var(--success-color);
+            border-color: var(--success-color);
+        }
+
+        body.dark-mode .btn-outline-success:hover {
+            background-color: var(--success-color);
+            color: #ffffff;
+        }
+        
+        body.dark-mode .toggle-btn {
+            color: var(--text-color);
+        }
+
+        body.dark-mode a {
+            color: var(--primary-color);
+        }
+
+        .login-card {
+            border-radius: 20px;
+            padding: 2.5rem;
+            background-color: var(--card-bg-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .login-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            transform: rotate(-30deg);
+            z-index: -1;
+            transition: background 0.3s ease;
+        }
+
+        .brand-logo {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .brand-logo:hover {
+            transform: scale(1.1);
+        }
+
+        h3.fw-bold {
+            color: var(--primary-color);
+            font-weight: 700 !important;
+            transition: color 0.3s ease;
+        }
+
+        .form-control {
+            border-radius: 10px;
+            border: 1px solid #d1d5db;
+            padding: 0.75rem 1rem;
+            transition: all 0.2s ease;
+            background-color: #f3f4f6;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline-success {
+            border-color: #10b981;
+            color: #10b981;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-success:hover {
+            background-color: #10b981;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+        
+        .toggle-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .toggle-btn:hover {
+            color: var(--primary-color);
+        }
+        
+        /* NEW: Make text-muted visible in dark mode */
+        body.dark-mode .text-muted {
+            color: var(--text-color) !important;
+        }

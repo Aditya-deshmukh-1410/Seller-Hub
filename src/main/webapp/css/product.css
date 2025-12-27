@@ -1,0 +1,307 @@
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #4f46e5;
+    --success-color: #10b981;
+    --danger-color: #dc2626;
+    --warning-color: #f59e0b;
+    --bg-start-color: #f8f9fa;
+    --bg-end-color: #e9f2ff;
+    --card-bg-color: #ffffff;
+    --text-color: #1f2937;
+    --card-border-color: #e2e8f0;
+    --navbar-bg-color: #1f2937;
+    --navbar-text-color: #e2e8f0;
+}
+
+body {
+    background: linear-gradient(135deg, var(--bg-start-color), var(--bg-end-color));
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ---------------- Dark Mode ---------------- */
+body.dark-mode {
+    --bg-start-color: #1a202c;
+    --bg-end-color: #2d3748;
+    --card-bg-color: #2d3748;
+    --text-color: #e2e8f0;
+    --primary-color: #63b3ed;
+    --secondary-color: #9f7aea;
+    --success-color: #10b981;
+    --danger-color: #f87171;
+    --warning-color: #fcd34d;
+    --card-border-color: #4a5568;
+    --navbar-bg-color: #1a202c;
+    --navbar-text-color: #e2e8f0;
+}
+
+body.dark-mode .navbar-custom {
+    background-color: var(--navbar-bg-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+body.dark-mode .navbar-brand,
+body.dark-mode .nav-link {
+    color: var(--navbar-text-color) !important;
+}
+
+body.dark-mode .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+body.dark-mode .card-custom {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--card-border-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+body.dark-mode .text-muted,
+body.dark-mode .form-label {
+    color: var(--navbar-text-color) !important;
+}
+
+body.dark-mode .form-control {
+    background-color: #3f4756;
+    border-color: #5a6473;
+    color: var(--text-color);
+}
+
+body.dark-mode .form-control:focus {
+    background-color: #3f4756;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(99, 179, 237, 0.25);
+}
+
+/* ✅ FIX: Dark Mode Table */
+body.dark-mode .table {
+    background-color: #2d3748;
+    color: var(--text-color);
+}
+
+body.dark-mode .table th {
+    background-color: #313b4f;
+    color: var(--primary-color);
+}
+
+body.dark-mode .table td {
+    background-color: #2a3344;
+    color: var(--text-color);
+}
+
+body.dark-mode .table-hover tbody tr:hover td {
+    background-color: #3b455b !important;
+}
+
+/* ✅ Optional: Striped effect for dark mode */
+body.dark-mode .table-striped tbody tr:nth-of-type(odd) td {
+    background-color: #2f3a4d;
+}
+
+/* ---------------- Navbar ---------------- */
+.navbar-custom {
+    background: var(--navbar-bg-color);
+    padding: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar-custom {
+    background: var(--navbar-bg-color);
+    padding: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    
+    /*  Key Change: Make the navbar sticky */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: var(--navbar-text-color) !important;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+.toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--navbar-text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+.toggle-btn:hover {
+    color: var(--primary-color);
+}
+
+/* ---------------- Card ---------------- */
+.card-custom {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: var(--card-bg-color);
+    padding: 2.5rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ---------------- Buttons ---------------- */
+.btn {
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-add { background: var(--primary-color); color: #fff; }
+.btn-update { background: var(--success-color); color: #fff; }
+.btn-delete { background: var(--danger-color); color: #fff; }
+
+.btn-add:hover, .btn-update:hover, .btn-delete:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-add:hover { background: #1e40af; }
+.btn-update:hover { background: #0d9d6a; }
+.btn-delete:hover { background: #b91c1c; }
+
+/* ---------------- Table ---------------- */
+.table thead {
+    background: var(--navbar-bg-color);
+    color: var(--navbar-text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--card-border-color);
+}
+
+/* Light Mode Table */
+.table tbody {
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+}
+
+.table-hover tbody tr:hover {
+    background: #f3f4f6;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.table-custom-cell {
+    vertical-align: middle;
+}
+
+/* ---------------- Profile ---------------- */
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+    transition: border-color 0.3s ease;
+}
+
+body.dark-mode .profile-img {
+    border-color: var(--primary-color);
+}
+
+.text-primary-dark {
+    color: var(--primary-color) !important;
+}
+
+
+/* ================= MOBILE SAFETY (STEP 1) ================= */
+
+/* Prevent horizontal scroll */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Prevent mobile text auto zoom */
+body {
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Faster & better touch response */
+button,
+input,
+select,
+textarea {
+    touch-action: manipulation;
+}
+
+/* Mobile card spacing (no UI change on desktop) */
+@media (max-width: 576px) {
+    .card-custom {
+        padding: 1.25rem;
+        border-radius: 16px;
+    }
+}
+
+/* Navbar stability on mobile */
+.navbar-custom {
+    width: 100%;
+}
+
+/* Accessible button tap size on mobile */
+@media (max-width: 576px) {
+    .btn {
+        min-height: 44px;
+    }
+}
+
+
+/* ================= HAMBURGER FIX ================= */
+/* Hamburger icon fix */
+.navbar-toggler {
+    border: none;
+    background-color: transparent; /* optional: add a slightly visible bg if needed */
+    padding: 0.5rem; /* make it easier to click */
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 2rem;  /* make it bigger */
+    height: 2rem; /* make it bigger */
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/ %3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+body.dark-mode .navbar-toggler-icon {
+    filter: invert(0); /* no need to invert anymore */
+}
+
+
+
+
+/* Mobile dropdown styling */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: var(--navbar-bg-color);
+        padding: 1rem;
+        border-radius: 12px;
+        margin-top: 0.75rem;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.75rem 0;
+        text-align: center;
+    }
+}
+
