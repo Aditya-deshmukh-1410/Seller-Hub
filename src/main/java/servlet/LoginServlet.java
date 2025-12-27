@@ -14,8 +14,10 @@ import model.Seller;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
-    throws ServletException, IOException {
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
         String portId = request.getParameter("port_id");
         String password = request.getParameter("password");
 
@@ -24,9 +26,9 @@ public class LoginServlet extends HttpServlet {
 
         if (seller != null) {
             request.getSession().setAttribute("seller", seller);
-            response.sendRedirect("product.jsp");
+            response.sendRedirect(request.getContextPath() + "/product.jsp");
         } else {
-            response.sendRedirect("login.jsp?error=1");
+            response.sendRedirect(request.getContextPath() + "/login.jsp?error=1");
         }
     }
 }
