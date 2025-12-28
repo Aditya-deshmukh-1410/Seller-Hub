@@ -1,8 +1,8 @@
 package servlet;
 
 import java.io.IOException;
-import java.sql.*;
-import java.util.*;
+import java.sql.SQLException;
+import java.util.List;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -13,24 +13,14 @@ import model.Seller;
 
 @WebServlet("/OrderServlet")
 public class OrderServlet extends HttpServlet {
-    private OrdersDAO ordersDAO;
-    
-    @Override
-    public void init() throws ServletException {
-        try {
-			ordersDAO = new OrdersDAO();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}  // ✅ now initialized
-    }
 
+    // No DAO stored as field (thread-safe)
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        // ✅ Ensure seller is logged in
+        // Ensure seller logged in
         Seller seller = (Seller) req.getSession().getAttribute("seller");
         if (seller == null) {
             resp.sendRedirect("login.jsp");
@@ -40,13 +30,11 @@ public class OrderServlet extends HttpServlet {
         String sellerPortId = seller.getPortId();
 
         try {
-            // ✅ Fetch orders from DB
+            OrdersDAO ordersDAO = new OrdersDAO();
             List<Order> orders = ordersDAO.getOrdersBySeller(sellerPortId);
 
-            // ✅ Send to JSP
             req.setAttribute("orders", orders);
-            RequestDispatcher rd = req.getRequestDispatcher("order.jsp");
-            rd.forward(req, resp);
+            req.getRequestDispatcher("order.jsp").forward(req, resp);
 
         } catch (SQLException e) {
             throw new ServletException("Error loading orders", e);
@@ -54,27 +42,45 @@ public class OrderServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        
-        // ✅ Read params safely
-        int orderId = Integer.parseInt(req.getParameter("order_id"));
-        String status = req.getParameter("status");
 
-        // ✅ Ensure seller is logged in
+        // Ensure seller logged in
         Seller seller = (Seller) req.getSession().getAttribute("seller");
         if (seller == null) {
             resp.sendRedirect("login.jsp");
             return;
         }
 
+        String orderIdStr = req.getParameter("order_id");
+        String status = req.getParameter("status");
+
+        if (orderIdStr == null || status == null || status.isBlank()) {
+            resp.sendRedirect("OrderServlet?error=Invalid request");
+            return;
+        }
+
+        int orderId;
         try {
-            // ✅ Update order status
-            ordersDAO.updateStatus(orderId, status);
+            orderId = Integer.parseInt(orderIdStr);
+        } catch (NumberFormatException e) {
+            resp.sendRedirect("OrderServlet?error=Invalid order id");
+            return;
+        }
 
-            // ✅ Redirect back to orders list
-            resp.sendRedirect("OrderServlet?msg=Order Updated Successfully");
+        try {
+            OrdersDAO ordersDAO = new OrdersDAO();
+            boolean updated = ordersDAO.updateStatus(
+                    orderId,
+                    seller.getPortId(),
+                    status
+            );
 
+            if (updated) {
+                resp.sendRedirect("OrderServlet?msg=Order updated successfully");
+            } else {
+                resp.sendRedirect("OrderServlet?error=Order not found or unauthorized");
+            }
 
         } catch (SQLException e) {
             throw new ServletException("Error updating order", e);

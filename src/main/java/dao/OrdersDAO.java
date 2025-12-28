@@ -5,20 +5,17 @@ import java.util.*;
 import model.Order;
 
 public class OrdersDAO {
-    private Connection conn;
 
-    
-    public OrdersDAO() throws SQLException {
-        this.conn = GetConnection.getConnection();
-    }
-
-   
+    // Get all orders for a seller
     public List<Order> getOrdersBySeller(String sellerPortId) throws SQLException {
         List<Order> list = new ArrayList<>();
         String sql = "SELECT * FROM orders WHERE seller_port_id = ?";
-        
-        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+
+        try (Connection con = GetConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
             ps.setString(1, sellerPortId);
+
             try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
                     Order o = new Order(
@@ -37,13 +34,18 @@ public class OrdersDAO {
         return list;
     }
 
-    
-    public void updateStatus(int orderId, String status) throws SQLException {
-        String sql = "UPDATE orders SET status = ? WHERE order_id = ?";
-        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+    // Update order status (seller-safe)
+    public boolean updateStatus(int orderId, String sellerPortId, String status) throws SQLException {
+        String sql = "UPDATE orders SET status = ? WHERE order_id = ? AND seller_port_id = ?";
+
+        try (Connection con = GetConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
             ps.setString(1, status);
             ps.setInt(2, orderId);
-            ps.executeUpdate();
+            ps.setString(3, sellerPortId);
+
+            return ps.executeUpdate() == 1;
         }
     }
 }

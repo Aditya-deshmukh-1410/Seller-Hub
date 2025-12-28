@@ -1,3 +1,3 @@
 <%
-    response.sendRedirect(request.getContextPath() + "/dashboard.jsp");
+    response.sendRedirect(request.getContextPath() + "/startDash.jsp");
 %>
