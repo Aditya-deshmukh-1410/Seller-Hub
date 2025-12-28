@@ -1,0 +1,426 @@
+@charset "ISO-8859-1";
+
+/* === Global CSS Variables (Light Mode) === */
+:root {
+    --primary-color: #2563eb;
+    --primary-color-rgb: 37, 99, 235;
+    --secondary-color: #4f46e5;
+    --success-color: #10b981;
+    --danger-color: #dc2626;
+    --warning-color: #f59e0b;
+    --bg-start-color: #f8f9fa;
+    --bg-end-color: #e9f2ff;
+    --card-bg-color: #ffffff;
+    --text-color: #1f2937;
+    --text-secondary-color: #4b5563;
+    --card-border-color: #e2e8f0;
+    --footer-bg-color: #e9ecef;
+    --footer-text-color: #495057;
+}
+
+/* === Dark Mode Variables === */
+body.dark-mode {
+    --bg-start-color: #1a202c;
+    --bg-end-color: #2d3748;
+    --card-bg-color: #2d3748;
+    --text-color: #e2e8f0;
+    --text-secondary-color: #a0aec0;
+    --primary-color: #63b3ed;
+    --primary-color-rgb: 99, 179, 237;
+    --secondary-color: #9f7aea;
+    --success-color: #10b981;
+    --danger-color: #f87171;
+    --warning-color: #fcd34d;
+    --card-border-color: #4a5568;
+    --footer-bg-color: #1a202c;
+    --footer-text-color: #a0aec0;
+}
+
+/* === Base Styles === */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, var(--bg-start-color), var(--bg-end-color));
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* === Navbar === */
+.navbar-custom {
+    background-color: var(--card-bg-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .navbar-custom {
+    background-color: var(--card-bg-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+}
+
+body.dark-mode .navbar-brand {
+    color: var(--primary-color) !important;
+}
+
+/* --- Toggle Button --- */
+.toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+.toggle-btn:hover {
+    color: var(--primary-color);
+}
+
+body.dark-mode .toggle-btn {
+    color: var(--text-color);
+}
+
+/* --- Nav Links --- */
+.btn-custom-primary {
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 9999px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
+    transition: all 0.3s ease;
+    padding: 12px 28px; /* Increased padding */
+    font-size: 1.1rem; /* Slightly larger font */
+}
+
+.btn-custom-primary:hover {
+    background: #1e40af;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+}
+
+.btn-custom-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 9999px;
+    font-weight: 600;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    padding: 12px 28px; /* Increased padding */
+    font-size: 1.1rem; /* Slightly larger font */
+}
+
+.btn-custom-outline:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+/* === Hero Section === */
+.hero-section {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 3.5rem;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .hero-section h1 {
+    color: var(--primary-color);
+}
+
+body.dark-mode .hero-section p {
+    color: var(--text-secondary-color);
+}
+
+.hero-section p {
+    max-width: 600px;
+    margin: 1rem auto 2rem auto;
+    color: var(--text-secondary-color);
+    transition: color 0.3s ease;
+}
+
+/* === Info Cards === */
+.info-card,
+.testimonial-card,
+.how-it-works .step {
+    border-radius: 20px;
+    background-color: var(--card-bg-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    height: 100%;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    border: none;
+}
+
+body.dark-mode .info-card,
+body.dark-mode .testimonial-card,
+body.dark-mode .how-it-works .step {
+    background-color: var(--card-bg-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.info-card:hover,
+.testimonial-card:hover,
+.how-it-works .step:hover {
+    transform: translateY(-5px);
+}
+
+.info-card .icon-circle,
+.how-it-works .step .icon-circle {
+    width: 70px;
+    height: 70px;
+    background: #e0f2fe;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1.5rem auto;
+    color: var(--primary-color);
+    font-size: 2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .info-card .icon-circle {
+    background: #4a5568;
+    color: var(--primary-color);
+}
+
+/* FIX: Card heading color to match hero section */
+.info-card h5, .how-it-works h5 {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+body.dark-mode .info-card h5, body.dark-mode .how-it-works h5 {
+    color: var(--primary-color);
+}
+
+body.dark-mode .info-card p.text-muted,
+body.dark-mode .how-it-works .step p,
+body.dark-mode .testimonial-card p {
+    color: var(--text-color) !important;
+}
+
+/* === How It Works Section === */
+.how-it-works {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.how-it-works .step h5 {
+    font-weight: 600;
+}
+
+.how-it-works .step p {
+    color: var(--text-secondary-color);
+}
+
+.how-it-works .step .icon-circle {
+    background: #dbeafe;
+}
+
+/* === Statistics Section === */
+.statistics-section {
+    padding: 80px 0;
+    background-color: var(--bg-start-color);
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .statistics-section {
+    background-color: var(--bg-end-color);
+}
+
+.statistic-item h2 {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .statistic-item h2 {
+    color: var(--text-color);
+}
+
+.statistic-item p {
+    color: var(--text-secondary-color);
+}
+
+body.dark-mode .statistic-item p {
+    color: var(--text-color) !important;
+}
+
+/* === Testimonials Section === */
+.testimonials-section {
+    padding: 80px 0;
+    background-color: var(--bg-start-color);
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .testimonials-section {
+    background-color: var(--bg-end-color);
+}
+
+.testimonial-card {
+    border: 1px solid var(--card-border-color);
+    padding: 2rem;
+    position: relative;
+}
+
+.testimonial-card .quote-icon {
+    color: var(--primary-color);
+    font-size: 3rem;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    opacity: 0.2;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card .author {
+    font-weight: 600;
+}
+
+/* === FAQ Section === */
+.faq-section {
+    padding: 80px 0;
+    background-color: var(--bg-end-color);
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .faq-section {
+    background-color: var(--bg-end-color);
+}
+
+.faq-section .accordion-item {
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.faq-section .accordion-button {
+    font-weight: 600;
+    border-radius: 10px !important;
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .faq-section .accordion-button {
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+}
+
+.faq-section .accordion-button:not(.collapsed) {
+    background-color: #e0f2fe;
+    color: var(--primary-color);
+}
+
+body.dark-mode .faq-section .accordion-button:not(.collapsed) {
+    background-color: #4a5568;
+    color: var(--primary-color);
+}
+
+.faq-section .accordion-button:focus {
+    box-shadow: none;
+}
+
+/* FIX: FAQ arrow visibility in dark mode */
+.faq-section .accordion-button::after {
+    filter: invert(0.8) grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+body.dark-mode .faq-section .accordion-button::after {
+    filter: invert(1) grayscale(100%) brightness(1.5);
+}
+
+/* === CTA Section === */
+.cta-section {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transition: background 0.3s ease;
+}
+
+body.dark-mode .cta-section {
+    background: linear-gradient(90deg, var(--primary-color), #7f5eef);
+}
+
+.cta-section h2 {
+    font-weight: 700;
+}
+
+/* === Footer === */
+.footer-custom {
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    padding: 4rem 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-custom a {
+    color: var(--footer-text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-custom a:hover {
+    color: var(--primary-color);
+}
+
+.footer-custom .social-icon {
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+    color: var(--footer-text-color);
+    transition: color 0.3s ease;
+}
+
+.footer-custom .social-icon:hover {
+    color: var(--primary-color);
+}
+
+/* === Scroll-to-top button === */
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+    background-color: #1e40af;
+}
+
+/* === Responsive Styles === */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+}

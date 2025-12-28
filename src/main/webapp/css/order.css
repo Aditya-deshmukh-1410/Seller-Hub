@@ -1,0 +1,211 @@
+@charset "ISO-8859-1";
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #4f46e5;
+            --success-color: #10b981;
+            --danger-color: #dc2626;
+            --warning-color: #f59e0b;
+            --info-color: #0d6efd;
+            --bg-start-color: #f8f9fa;
+            --bg-end-color: #e9f2ff;
+            --card-bg-color: #ffffff;
+            --text-color: #1f2937;
+            --text-secondary-color: #4b5563;
+            --card-border-color: #e2e8f0;
+            --navbar-bg-color: #1f2937;
+            --navbar-text-color: #e2e8f0;
+        }
+
+        /* --- Dark Mode Variables --- */
+        body.dark-mode {
+            --bg-start-color: #1a202c;
+            --bg-end-color: #2d3748;
+            --card-bg-color: #2d3748;
+            --text-color: #e2e8f0;
+            --text-secondary-color: #9ca3af;
+            --primary-color: #63b3ed;
+            --secondary-color: #9f7aea;
+            --success-color: #34d399;
+            --danger-color: #f87171;
+            --warning-color: #fcd34d;
+            --info-color: #38bdf8;
+            --card-border-color: #4a5568;
+            --navbar-bg-color: #1a202c;
+            --navbar-text-color: #e2e8f0;
+        }
+        
+        /* --- Base Styles --- */
+        body {
+            background: linear-gradient(135deg, var(--bg-start-color), var(--bg-end-color));
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* --- Navbar --- */
+        .navbar-custom {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--navbar-bg-color);
+            padding: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .navbar-custom .navbar-brand {
+            font-weight: 600;
+            color: var(--navbar-text-color) !important;
+        }
+        
+        .nav-link {
+            font-weight: 600;
+            color: var(--navbar-text-color) !important;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+
+        .toggle-btn {
+            background: transparent;
+            border: none;
+            color: var(--navbar-text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .toggle-btn:hover {
+            color: var(--primary-color);
+        }
+
+        body.dark-mode .navbar-custom {
+            background-color: var(--navbar-bg-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        body.dark-mode .nav-link {
+            color: var(--navbar-text-color) !important;
+        }
+        
+        body.dark-mode .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+
+        /* --- Main Content --- */
+        .container-fluid.main-content {
+            flex-grow: 1;
+            padding: 2rem;
+        }
+        
+        .card-custom {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background: var(--card-bg-color);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        body.dark-mode .card-custom {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            background: var(--card-bg-color);
+        }
+        
+        .text-primary-dark {
+            color: var(--primary-color) !important;
+            font-weight: 700;
+        }
+        
+        body.dark-mode .text-primary-dark {
+            color: var(--primary-color) !important;
+        }
+
+        .text-muted-dark {
+            color: var(--text-secondary-color) !important;
+        }
+        
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .badge-status-pending { background-color: var(--warning-color); color: var(--text-color); }
+        .badge-status-shipped { background-color: var(--info-color); color: white; }
+        .badge-status-delivered { background-color: var(--success-color); color: white; }
+        .badge-status-cancelled { background-color: var(--danger-color); color: white; }
+        
+        .btn-update {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-update:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+        }
+        
+        body.dark-mode .btn-update {
+            background: var(--primary-color);
+        }
+        
+        body.dark-mode .btn-update:hover {
+            background: #1e40af;
+        }
+
+        .form-select-sm {
+            border-radius: 10px;
+            background-color: var(--bg-start-color);
+            color: var(--text-color);
+            border-color: var(--card-border-color);
+        }
+        
+        body.dark-mode .form-select-sm {
+            background-color: #3f4756;
+            color: var(--text-color);
+            border-color: var(--card-border-color);
+        }
+        
+        body.dark-mode .table {
+            color: var(--text-color);
+        }
+        
+        body.dark-mode .table-hover tbody tr:hover {
+            background-color: rgba(99, 179, 237, 0.1);
+        }
+        
+        .table-custom-header {
+            background-color: var(--table-header-bg-color);
+            color: var(--table-header-text-color);
+        }
+
+        body.dark-mode .table thead, .table-custom-header {
+            background-color: #313b4f;
+            color: var(--text-color);
+        }
+        
+        body.dark-mode .table tbody tr td {
+            background-color: #2d3748;
+            color: var(--text-color);
+        }
+        
+        .table-responsive {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--card-border-color);
+        }
+        
+        body.dark-mode .table-responsive {
+            border: 1px solid var(--card-border-color);
+        }
