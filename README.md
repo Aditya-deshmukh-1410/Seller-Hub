@@ -36,16 +36,16 @@ The project is built using **JSP, Servlets, JDBC**, follows the **MVC architectu
 ![register Page](screenshots/Img5.PNG)
 
 ### 🔹 Product Management
-![Manage Products](screenshots/Img6.PNG)
+![Manage Products](screenshots/Img 6.PNG)
 
 ### 🔹 Order Management
-![Orders](screenshots/Img7.PNG)
+![Orders](screenshots/Img 7.PNG)
 
 ### 🔹 Reports Section
-![Reports](screenshots/Img8.PNG)
+![Reports](screenshots/Img 8.PNG)
 
 ### 🔹 Seller Profile
-![Profile](screenshots/Img9.PNG)
+![Profile](screenshots/Img 9.PNG)
 
 ---
 
