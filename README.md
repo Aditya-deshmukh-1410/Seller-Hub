@@ -62,25 +62,41 @@ The project is built using **JSP, Servlets, JDBC**, follows the **MVC architectu
 
 ---
 
-## 🧱 MVC Architecture
+## 📁File Structure
 
-```text
-src/
- ├── dao/          # Data Access Objects
- ├── model/        # POJO classes
- ├── servlet/      # Controllers
- ├── util/         # Database utilities
+```
+🗂️CombinedProj/
+├─ pom.xml
+├─ Dockerfile
+├─ /
+📁src/
+│  ├─ 📁main/
+│  │  ├─ 📁java/
+│  │  │  └─ com/yourcompany/combinedproj/
+│  │  │      ├─ 📁dao/
+│  │  │      ├─ 📁model/ 
+│  │  │      └─ 📁servlet/
+│  │  └─ ⚙️resources/
+│  │      └─ (config files, properties, etc.)
+│  └─ 📁webapp/
+│      ├─ 📁WEB-INF/
+│      │   ├─ web.xml
+│      │   └─ lib/  (mysql.connector.jar)
+│      ├─ 📁css/
+│      │   └─ (CSS files)
+│      ├─ 📁js/
+│      │   └─ (JavaScript files)
+│      ├─ 📁images/
+│      │   └─ (icons images)
+│      ├─ 📁shared/
+│      │   └─ (common JSP fragments like header/footer)
+│      └─ 📁jsp/
+│          ├─ 📝index.jsp
+│          ├─ 📝login.jsp
+│          ├─ 📝register.jsp
+│          ├─ 📝product.jsp
+│          ├─ 📝order.jsp
+│          ├─ 📝startDash.jsp
+│          └─ 📝dashboard.jsp
 
-WebContent/
- ├── jsp/          # JSP Views
- ├── css/
- ├── js/
- └── images/
-
-screenshots/
- ├── img1.png
- ├── img2.png
- ├── img3.png
- ├── img4.png
- ├── img5.png
- └── img6.png
+```
