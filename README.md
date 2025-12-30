@@ -29,7 +29,7 @@ The project is built using **JSP, Servlets, JDBC**, follows the **MVC architectu
 ### 🔹 Landing Page
 ![Landing Page](screenshots/img1.PNG)
 ![Landing Page](screenshots/img2.PNG)
-![Landing Page](screenshots/img3.PNG)
+![Landing Page](screenshots/Img3.PNG)
 
 ### 🔹 login & Register
 ![login Page](screenshots/Img4.PNG)
