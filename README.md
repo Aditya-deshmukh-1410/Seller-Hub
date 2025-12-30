@@ -19,8 +19,8 @@ The project is built using **JSP, Servlets, JDBC**, follows the **MVC architectu
 
 ## 🎥 Project Demo Video
 
-▶️ **Watch Full Demo Here:**  
-👉 [Youtube link:](https://youtu.be/vlwEM2EADyU)
+[![Watch the demo](https://img.youtube.com/vi/vlwEM2EADyU/hqdefault.jpg)](https://youtu.be/vlwEM2EADyU)
+
 
 ---
 
