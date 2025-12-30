@@ -20,7 +20,7 @@ The project is built using **JSP, Servlets, JDBC**, follows the **MVC architectu
 ## 🎥 Project Demo Video
 
 ▶️ **Watch Full Demo Here:**  
-👉 *(Add your YouTube / Google Drive link here)*
+👉 [Youtube link:](https://youtu.be/vlwEM2EADyU)
 
 ---
 
@@ -100,3 +100,12 @@ The project is built using **JSP, Servlets, JDBC**, follows the **MVC architectu
 │          └─ 📝dashboard.jsp
 
 ```
+
+## 📄 Software Requirement Specification (SRS)
+
+This project was developed following a formal **Software Requirement Specification (SRS)** document.
+
+📎 Documents:
+🔹 [SRS – PDF](docs/Import_Export_Erp.pdf)
+
+
