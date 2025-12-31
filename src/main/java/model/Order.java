@@ -10,10 +10,6 @@ public class Order {
     private double totalAmount;
     private String status;
     private String deliveryAddress;
-
-   
-    public Order() {}
-
     
     public Order(int orderId, int buyerId, String sellerPortId,
                  Timestamp orderDate, double totalAmount,
@@ -26,8 +22,6 @@ public class Order {
         this.status = status;
         this.deliveryAddress = deliveryAddress;
     }
-
-    // Getters
     public int getOrderId() { return orderId; }
     public int getBuyerId() { return buyerId; }
     public String getSellerPortId() { return sellerPortId; }
@@ -36,7 +30,6 @@ public class Order {
     public String getStatus() { return status; }
     public String getDeliveryAddress() { return deliveryAddress; }
 
-    // Setters
     public void setOrderId(int orderId) { this.orderId = orderId; }
     public void setBuyerId(int buyerId) { this.buyerId = buyerId; }
     public void setSellerPortId(String sellerPortId) { this.sellerPortId = sellerPortId; }
