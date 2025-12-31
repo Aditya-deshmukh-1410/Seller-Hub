@@ -36,7 +36,7 @@ public class ReportDAO {
         sql.append("LIMIT ? OFFSET ?");
 
         params.add(size);
-        params.add(Math.max(0, (page - 1) * size)); // prevent negative offset
+        params.add(Math.max(0, (page - 1) * size)); 
 
         try (Connection con = DBUtil.getConnection();
              PreparedStatement ps = con.prepareStatement(sql.toString())) {
@@ -116,7 +116,7 @@ public class ReportDAO {
         }
     }
 
-    // Simple helper to create a report (useful to seed from code)
+   
     public int create(int productId, String reporterId, String reason) throws SQLException {
         String sql = "INSERT INTO reported_products (product_id, reporter_id, reason, status) VALUES (?,?,?,'open')";
         try (Connection con = DBUtil.getConnection();
