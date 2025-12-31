@@ -12,7 +12,7 @@ import dao.GetConnection;
 public class Product_pojo {
     private int productId;
     private String seller_port_id;
-    private String productname;  // maps to product_name in DB
+    private String productname;  
     private String description;
     private int quantity;
     private double price;
@@ -36,7 +36,7 @@ public class Product_pojo {
     public double getPrice() { return price; }
     public void setPrice(double price) { this.price = price; }
 
-    // DB Operations
+ 
     public void addProduct() throws SQLException {
         String sql = "INSERT INTO information (seller_port_id, product_name, description, quantity, price) VALUES (?,?,?,?,?)";
         try (Connection connection = GetConnection.getConnection();
@@ -74,7 +74,6 @@ public class Product_pojo {
         }
     }
 
-    // ✅ Get all products by seller
     public List<Product_pojo> getProductsBySeller(String sellerPortId) throws SQLException {
         List<Product_pojo> products = new ArrayList<>();
         String sql = "SELECT product_id, seller_port_id, product_name, description, quantity, price " +
