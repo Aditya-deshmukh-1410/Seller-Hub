@@ -6,8 +6,7 @@ public class Seller {
     private String email;
     private String location;
     private String password;
-    
-    // Constructor
+
     public Seller(String port_id, String name, String email, String location, String password) {
         this.port_id = port_id;
         this.name = name;
@@ -15,14 +14,12 @@ public class Seller {
         this.location = location;
         this.password = password;
     }
-
-    // Getters & Setters
     public String getPortId() { 
         return port_id; 
     }
     
     public void setPortId(String portId) { 
-        this.port_id = portId;  // ✅ fixed bug here
+        this.port_id = portId;  
     }
     
     public String getName() { 
