@@ -1,19 +1,27 @@
+![Java](https://img.shields.io/badge/Java-8+-orange)
+![Tomcat](https://img.shields.io/badge/Tomcat-9.0-yellow)
+![MySQL](https://img.shields.io/badge/MySQL-8-blue)
+![MVC](https://img.shields.io/badge/Architecture-MVC-green)
+
 # 🧾 Seller Hub – ERP Management System
 
 Seller Hub is a **Java-based ERP web application** designed to help sellers manage their business operations such as products, orders, reports, and profile management.  
 The project is built using **JSP, Servlets, JDBC**, follows the **MVC architecture**, and runs on **Apache Tomcat 9**.
 
+It addresses common challenges such as manual product tracking, inefficient order management, and scattered complaint handling by providing a structured, role-based ERP system built using JSP, Servlets, JDBC, and the MVC architecture.
+
 ---
 
 ## 🚀 Features
 
--  Seller Registration & Login
--  Product Management (Add / Update / Delete)
--  Order Tracking & Status Updates
--  Report & Complaint Management
--  Seller Profile Management
--  Dark Mode UI
--  Clean MVC Architecture
+-  Secure seller Registration & Authentication
+-  Full CRUD operations for product lifecycle management
+-  Order tracking with real-time status updates
+-  Complaint and report management system
+-  Seller profile management
+-  Dark mode enabled UI
+-  Clean and scalable MVC architecture
+-  DAO pattern for database interaction
 
 ---
 
@@ -62,6 +70,28 @@ The project is built using **JSP, Servlets, JDBC**, follows the **MVC architectu
 
 ---
 
+## 🧠 Key Technical Decisions
+- Implemented MVC architecture to separate concerns and improve maintainability.
+- Used DAO pattern for clean and reusable database access logic.
+- Session-based authentication for secure login handling.
+- Reusable JSP fragments (header/footer) for UI consistency.
+- Modular structure for easier future enhancements.
+
+## 📌 Database Design
+- sellers
+- products
+- orders
+- reports
+- view profile
+
+### Entity Relationship Diagram (ERD)
+
+This ER diagram represents the logical database structure of the Seller Hub ERP system,
+showing entities, attributes, and relationships between sellers, products, orders, and reports.
+
+![ER Diagram](docs/er-diagram.png)
+
+
 ## 📁File Structure
 
 ```
@@ -107,5 +137,22 @@ This project was developed following a formal **Software Requirement Specificati
 
 📎 Documents:
 🔹 [SRS – PDF](docs/Import_Export_Erp.pdf)
+
+
+## ⚙️ Getting Started
+
+### Prerequisites
+- Java 8 or higher
+- Apache Tomcat 9
+- MySQL 8+
+- Maven
+- Eclipse / IntelliJ IDEA
+
+## Future Enhancements
+- Role-based access control (Admin / Seller / Support)
+- Email & notification system
+- Advanced sales analytics dashboard
+- Migration to Spring Boot
+- Cloud deployment (AWS / Docker)
 
 
