@@ -13,14 +13,10 @@ import model.Seller;
 
 @WebServlet("/OrderServlet")
 public class OrderServlet extends HttpServlet {
-
-    // No DAO stored as field (thread-safe)
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        // Ensure seller logged in
         Seller seller = (Seller) req.getSession().getAttribute("seller");
         if (seller == null) {
             resp.sendRedirect("login.jsp");
@@ -45,7 +41,6 @@ public class OrderServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        // Ensure seller logged in
         Seller seller = (Seller) req.getSession().getAttribute("seller");
         if (seller == null) {
             resp.sendRedirect("login.jsp");
