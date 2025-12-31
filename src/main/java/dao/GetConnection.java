@@ -7,7 +7,6 @@ import java.sql.SQLException;
 public class GetConnection {
 
     public static Connection getConnection() {
-        // These will pull the values you set in the Render Dashboard
         String url = System.getenv("DB_URL");
         String user = System.getenv("DB_USER");
         String password = System.getenv("DB_PASSWORD");
