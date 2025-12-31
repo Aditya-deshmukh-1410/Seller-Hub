@@ -21,7 +21,7 @@ public class ProductServlet extends HttpServlet {
 
         HttpSession session = req.getSession(false);
 
-        // ✅ Get seller from session
+        // Get seller from session
         Seller seller = (session != null) ? (Seller) session.getAttribute("seller") : null;
         if (seller == null) {
             resp.sendRedirect("login.jsp?error=Please login first");
@@ -30,12 +30,12 @@ public class ProductServlet extends HttpServlet {
 
         String sellerPortId = seller.getPortId(); // <-- use your Seller model's getter
 
-        // ✅ Identify action
+        //  Identify action
         String action = req.getParameter("action");
         Product_pojo pojo = new Product_pojo();
         pojo.setSeller_port_id(sellerPortId);
 
-        // ✅ Corrected parameter names and trimming
+        
         pojo.setProductname(req.getParameter("product_name").trim());
         pojo.setDescription(req.getParameter("description").trim());
 
@@ -65,7 +65,7 @@ public class ProductServlet extends HttpServlet {
                 resp.sendRedirect("product.jsp?error=Unknown action");
             }
         } catch (SQLException e) {
-            e.printStackTrace(); // log in server
+            e.printStackTrace(); 
             resp.sendRedirect("product.jsp?error=Something went wrong, please try again");
         }
     }
