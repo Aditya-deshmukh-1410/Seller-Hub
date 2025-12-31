@@ -91,7 +91,7 @@ It addresses common challenges such as manual product tracking, inefficient orde
 This ER diagram represents the logical database structure of the Seller Hub ERP system,
 showing entities, attributes, and relationships between sellers, products, orders, and reports.
 
-![ER Diagram](docs/er-diagram.png)
+![ER Diagram](docs/DBflow.PNG)
 
 
 ## 📁File Structure
