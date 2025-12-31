@@ -1,7 +1,9 @@
+<center>
 ![Java](https://img.shields.io/badge/Java-8+-orange)
 ![Tomcat](https://img.shields.io/badge/Tomcat-9.0-yellow)
 ![MySQL](https://img.shields.io/badge/MySQL-8-blue)
 ![MVC](https://img.shields.io/badge/Architecture-MVC-green)
+</center>
 
 # 🧾 Seller Hub – ERP Management System
 
