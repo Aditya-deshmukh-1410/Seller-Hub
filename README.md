@@ -3,7 +3,7 @@
   <img src="https://img.shields.io/badge/Tomcat-9.0-yellow" />
   <img src="https://img.shields.io/badge/MySQL-8-blue" />
   <img src="https://img.shields.io/badge/Architecture-MVC-green" />
-</p>
+</p> 
 
 # 🧾 Seller Hub – ERP Management System
 
