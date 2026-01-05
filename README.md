@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/Architecture-MVC-green" />
 </p> 
 
-# 🧾 Seller Hub – ERP Management System
+# 🧾 Seller Hub – ERP Management System 
 
 Seller Hub is a **Java-based ERP web application** designed to help sellers manage their business operations such as products, orders, reports, and profile management.  
 The project is built using **JSP, Servlets, JDBC**, follows the **MVC architecture**, and runs on **Apache Tomcat 9**.
